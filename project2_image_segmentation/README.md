@@ -1,6 +1,6 @@
 🧪 Project 2 — Image Segmentation (ETH Mugs Challenge)
 
-This project was completed as part of the Machine Learning for Computer Vision course at ETH Zürich (2025).
+This project was completed as part of the Machine Learning for Computer Vision course (Stochastics and ML) at ETH Zürich (2025).
 
 It implements a U-Net-based image segmentation model to detect ETH mugs in cluttered indoor scenes.
 
