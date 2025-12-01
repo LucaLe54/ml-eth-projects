@@ -1,48 +1,46 @@
 📏 Project 2 — Depth Regression from Single Images
 
-Machine Learning for Computer Vision · ETH Zürich · 2025
+ETH Zürich · Machine Learning for Computer Vision (2025)
 
-This project implements a convolutional regression model to estimate
-camera-to-obstacle distance from a single RGB image.
+This project trains a regression model to estimate the distance from the camera to the nearest obstacle using only a single low-resolution DSF16 image.
 
-It was part of the ETH Zürich Machine Learning for Computer Vision course (2025).
+🔍 Goal
 
-🔍 Overview
+Predict a continuous depth value (in meters) from a single grayscale image.
+The task was evaluated using Mean Absolute Error (MAE) on a leaderboard.
 
-The task:
-Predict the distance (in meters) to the nearest obstacle using only a single input image.
+🧠 Method
 
-The model was trained and evaluated on the official ETH dataset.
-Performance on the leaderboard is measured using Mean Absolute Error (MAE) in meters.
+This project uses a classical machine-learning approach:
 
-🧠 Model & Training Pipeline
+Custom preprocessing (Box-Cox + StandardScaler)
 
-Full ML pipeline implemented:
+Data augmentation (90° rotations)
 
-dataset preprocessing
+Ensemble model:
 
-normalization
+k-Nearest Neighbors
 
-augmentation
+Kernel Ridge Regression
 
-training / validation split
+Combined using VotingRegressor
 
-Convolutional neural network for continuous depth prediction
-
-Loss function: MAE
-
-Evaluation metric: MAE (meters)
-
-Framework: PyTorch
+Hyperparameter tuning with GridSearchCV
 
 🏗 Architecture
 
-Custom CNN with:
+Input: 27×36 grayscale images (flattened)
 
-convolution → ReLU → pooling
+Preprocessing: Power transform → Scaling
 
-deeper layers with batch normalization
+Models:
 
-fully connected regression head
+kNN (distance weighting)
 
-Outputs a single scalar distance value
+Kernel Ridge with RBF kernel
+
+Output: Single scalar distance value
+
+📁 Files
+
+train.py — training, evaluation, test prediction
