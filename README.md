@@ -39,13 +39,7 @@ Built a U-Net–based segmentation model to detect ETH mugs in indoor scenes.
 
 ---
 
-### **3. Robot Assembly Simulation in NVIDIA Isaac Sim**  
-*Bachelor Thesis (Planned) · ETH Zürich · 2026*  
-Designing a robotic assembly simulation environment in **NVIDIA Isaac Sim**, focusing on:  
-- Robot behavior scripting  
-- Part manipulation  
-- Assembly/disassembly analysis  
-- Python & USD simulation workflows
+
 
 ---
 
